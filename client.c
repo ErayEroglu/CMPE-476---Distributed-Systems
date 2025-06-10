@@ -16,6 +16,7 @@ typedef struct {
     double result;
 } response_t;
 
+// prompt : Client must be able to connect to the load balancer. Implement the required logic inside the client.c file.
 int connect_to_load_balancer() {
     int sock = socket(AF_UNIX, SOCK_STREAM, 0);
     if (sock == -1) {

@@ -17,7 +17,7 @@ void sigchld_handler(int sig) {
     pid_t pid;
     int status;
     
-    // Reap all available children
+    // prompt : All children of the watchdog must be killed when the watchdog is killed. That includes the load balancer, reverse proxies, and servers. Update the code to ensure this.
     while ((pid = waitpid(-1, &status, WNOHANG)) > 0) {
         if (pid == load_balancer_pid) {
             if (!should_exit) {
@@ -91,6 +91,7 @@ void sigchld_handler(int sig) {
     }
 }
 
+// prompt: Implement signal handler for SIGINT and SIGTSTP. 
 void sigint_handler(int sig) {
     (void)sig; // Unused parameter
     
@@ -210,6 +211,7 @@ void setup_signals() {
     }
 }
 
+// prompt: Implement methods to spawn the load balancer, reverse proxies, and servers. 
 void create_load_balancer() {
     printf("[Watchdog]: Creating Load Balancer\n");
     

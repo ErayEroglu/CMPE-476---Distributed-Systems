@@ -26,6 +26,7 @@ typedef struct {
     double result;
 } response_t;
 
+// prompt : Implement signal handler for SIGTERM. 
 void signal_handler(int sig) {
     if (sig == SIGTERM) {
         printf("[Reverse Proxy #%d]: Received SIGTERM from watchdog. Terminating.\n", proxy_id);
