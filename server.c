@@ -1,3 +1,5 @@
+#define _POSIX_C_SOURCE 200809L
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -7,6 +9,8 @@
 #include <signal.h>
 #include <math.h>
 #include <errno.h>
+#include <sys/select.h>
+#include <sys/time.h>
 
 #define SOCKET_PATH_BASE "/tmp/server_"
 #define BUFFER_SIZE 256

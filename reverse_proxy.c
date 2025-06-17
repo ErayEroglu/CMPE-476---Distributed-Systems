@@ -1,3 +1,5 @@
+#define _POSIX_C_SOURCE 200809L
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -8,6 +10,8 @@
 #include <errno.h>
 #include <sys/wait.h>
 #include <time.h>
+#include <sys/select.h>
+#include <sys/time.h>
 
 #define PROXY_SOCKET_BASE "/tmp/reverse_proxy_"
 #define SERVER_SOCKET_BASE "/tmp/server_"

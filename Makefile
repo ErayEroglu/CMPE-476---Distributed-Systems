@@ -16,7 +16,7 @@ reverse_proxy: reverse_proxy.c
 	$(CC) $(CFLAGS) -o $@ $<
 
 server: server.c
-	$(CC) $(CFLAGS) -o $@ $<
+	$(CC) $(CFLAGS) -o $@ $< -lm
 
 client: client.c
 	$(CC) $(CFLAGS) -o $@ $<
